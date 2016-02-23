@@ -1,7 +1,4 @@
-
 # coding: utf-8
-
-# In[1]:
 
 """
 A combustor. Two separate stream - one pure methane and the other air, both at
@@ -102,13 +99,7 @@ while tnow < tfinal:
         csvwriter.writerow([tnow, combustor.T, tres] + list(combustor.thermo.X))
 outfile.close()
 
-
-# In[2]:
-
 import numpy as np
-
-
-# In[3]:
 
 selectspecies=["OH","CH4","O2","CO2","H2O","CO"]
 selspeX=[]
@@ -126,22 +117,14 @@ with open('combustor.csv','rb') as csvfile:
         selspeX.append(column1)
 csvfile.close() 
 
-
-# In[4]:
-
 get_ipython().magic(u'matplotlib inline')
 from matplotlib import pyplot as plt
 
-
-# In[5]:
 
 for i,item in enumerate(selectspecies):
     plt.plot(column0,selspeX[i],label=item,linewidth=2)
 plt.legend(loc=9)
 plt.xlim(0.015,1.0)
-
-
-# In[6]:
 
 plt.plot(column0,columnT,label="T",linewidth=2)
 plt.legend()
@@ -149,7 +132,6 @@ plt.xlim(0.015,1.0)
 plt.ylim(0,4500)
 
 
-# In[ ]:
 
 
 
