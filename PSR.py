@@ -135,8 +135,3 @@ plt.plot(column0,columnT,label="T",linewidth=2)
 plt.legend()
 plt.xlim(0.015,1.0)
 plt.ylim(0,4500)
-
-
-
-
-
